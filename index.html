@@ -307,6 +307,21 @@
       border-color: var(--green-accent);
     }
 
+    .stack-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .stack-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--green-accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
     /* CONTACT */
     #kontakt {
       border-top: 0.5px solid rgba(45,158,107,0.15);
@@ -456,15 +471,58 @@
   <section id="stack">
     <p class="section-label">// 03 — Tech Stack</p>
     <h2 class="section-title">Womit ich arbeite</h2>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">HTML / CSS</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Git / GitHub</span>
-      <span class="tag">Linux</span>
-      <span class="tag">VS Code</span>
-      <span class="tag">REST APIs</span>
+
+    <div class="stack-grid">
+
+      <div class="stack-group">
+        <p class="stack-group-label">Webentwicklung</p>
+        <div class="tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Svelte</span>
+          <span class="tag">REST-API</span>
+          <span class="tag">API-Entwicklung</span>
+          <span class="tag">Back-End</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <p class="stack-group-label">Datenbanken & Backend</p>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">.NET-Framework</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <p class="stack-group-label">Tools & Zusammenarbeit</p>
+        <div class="tags">
+          <span class="tag">Git / GitLab</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">UML</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <p class="stack-group-label">Netzwerk & Hardware</p>
+        <div class="tags">
+          <span class="tag">IPv4 / IPv6</span>
+          <span class="tag">Networking</span>
+          <span class="tag">Hardware</span>
+          <span class="tag">Raspberry Pi</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <p class="stack-group-label">Grundlagen</p>
+        <div class="tags">
+          <span class="tag">Informatik</span>
+          <span class="tag">Programmieren</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -474,8 +532,8 @@
     <p style="color: var(--text-muted); font-size: 15px; max-width: 400px; margin: 0 auto;">Hast du ein Projekt, eine Idee oder eine Frage? Schreib mir einfach.</p>
     <a href="mailto:danielbolbocenau@gmail.com" class="contact-email">danielbolbocenau@gmail.com</a>
     <div class="contact-links">
-      <a href="https://github.com/daniblb" target="_blank">GitHub ↗</a>
-      <a href="www.linkedin.com/in/daniel-bolbocenanu" target="_blank">LinkedIn ↗</a>
+      <a href="https://github.com/danielbolbocenau" target="_blank">GitHub ↗</a>
+      <a href="https://linkedin.com/in/danielbolbocenau" target="_blank">LinkedIn ↗</a>
     </div>
   </section>
 
