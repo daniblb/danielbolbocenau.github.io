@@ -3,479 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniel Bolbocenau – IT & Softwareentwicklung</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green-deep:   #0a2e1f;
-      --green-dark:   #0f4a30;
-      --green-mid:    #1a6b45;
-      --green-accent: #2d9e6b;
-      --green-light:  #9fe1c0;
-      --cream:        #f5f2eb;
-      --cream-dark:   #e8e3d8;
-      --text-main:    #f5f2eb;
-      --text-muted:   #9fb8a8;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--green-deep);
-      color: var(--text-main);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 4rem;
-      background: rgba(10,46,31,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid rgba(45,158,107,0.2);
-    }
-
-    .nav-logo {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      color: var(--green-accent);
-      letter-spacing: 0.1em;
-    }
-
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text-main); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 4rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,158,107,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--green-accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.1s forwards;
-    }
-
-    .hero-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 1.05;
-      color: var(--cream);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.2s forwards;
-    }
-
-    .hero-name span {
-      color: var(--green-accent);
-    }
-
-    .hero-desc {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.35s forwards;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.5s forwards;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      font-size: 13px;
-      font-family: 'DM Mono', monospace;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--green-accent);
-      color: var(--green-deep);
-      font-weight: 500;
-    }
-    .btn-primary:hover { background: var(--green-light); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-muted);
-      border: 0.5px solid rgba(159,225,192,0.3);
-    }
-    .btn-outline:hover { color: var(--text-main); border-color: var(--green-accent); }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem; left: 4rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.7s forwards;
-    }
-
-    .hero-scroll::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 0.5px;
-      background: var(--green-accent);
-    }
-
-    /* SECTIONS */
-    section { padding: 6rem 4rem; }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--green-accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--cream);
-      margin-bottom: 3rem;
-      line-height: 1.15;
-    }
-
-    /* SERVICES */
-    #leistungen { border-top: 0.5px solid rgba(45,158,107,0.15); }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1px;
-      background: rgba(45,158,107,0.12);
-      border: 0.5px solid rgba(45,158,107,0.15);
-    }
-
-    .service-card {
-      background: var(--green-deep);
-      padding: 2.5rem;
-      transition: background 0.25s;
-    }
-
-    .service-card:hover { background: rgba(15,74,48,0.8); }
-
-    .service-icon {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--green-accent);
-      letter-spacing: 0.1em;
-      margin-bottom: 1.25rem;
-    }
-
-    .service-card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.3rem;
-      color: var(--cream);
-      margin-bottom: 0.75rem;
-      font-weight: 400;
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ABOUT */
-    #about { border-top: 0.5px solid rgba(45,158,107,0.15); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .about-text p {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .about-text p strong {
-      color: var(--cream);
-      font-weight: 500;
-    }
-
-    .about-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .stat {
-      border-left: 2px solid var(--green-accent);
-      padding-left: 1.5rem;
-    }
-
-    .stat-number {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
-      color: var(--cream);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-family: 'DM Mono', monospace;
-      letter-spacing: 0.05em;
-    }
-
-    /* STACK */
-    #stack { border-top: 0.5px solid rgba(45,158,107,0.15); }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2rem;
-    }
-
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      color: var(--green-light);
-      border: 0.5px solid rgba(159,225,192,0.25);
-      padding: 0.4rem 1rem;
-      letter-spacing: 0.05em;
-      transition: all 0.2s;
-    }
-
-    .tag:hover {
-      background: rgba(45,158,107,0.15);
-      border-color: var(--green-accent);
-    }
-
-    .stack-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .stack-group-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--green-accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    /* CONTACT */
-    #kontakt {
-      border-top: 0.5px solid rgba(45,158,107,0.15);
-      text-align: center;
-    }
-
-    .contact-email {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      color: var(--green-accent);
-      text-decoration: none;
-      display: inline-block;
-      margin: 2rem 0;
-      transition: color 0.2s;
-    }
-
-    .contact-email:hover { color: var(--green-light); }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin-top: 2rem;
-    }
-
-    .contact-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      color: var(--text-muted);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: color 0.2s;
-    }
-
-    .contact-links a:hover { color: var(--green-accent); }
-
-    /* FOOTER */
-    footer {
-      padding: 2rem 4rem;
-      border-top: 0.5px solid rgba(45,158,107,0.12);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer p {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { padding: 7rem 1.5rem 4rem; }
-      section { padding: 4rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
-      .hero-scroll { left: 1.5rem; }
-    }
-  </style>
+  <meta name="description" content="Daniel Bolbocenau – Webentwicklung, Software & IT-Lösungen aus Bayern." />
+  <title>Daniel Bolbocenau — IT & Softwareentwicklung</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ─── Navigation ──────────────────────── -->
   <nav>
-    <div class="nav-logo">DB // IT</div>
+    <a href="#hero" class="nav-logo">DB_PORTFOLIO</a>
     <ul class="nav-links">
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#about">Über mich</a></li>
       <li><a href="#stack">Stack</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
   </nav>
 
-  <section class="hero">
-    <p class="hero-label">// Fachinformatiker · Bayern</p>
-    <h1 class="hero-name">Daniel<br><span>Bolbocenau</span></h1>
-    <p class="hero-desc">Software, Webentwicklung & IT-Lösungen für Menschen und Unternehmen, die mehr wollen als Durchschnitt.</p>
-    <div class="hero-cta">
-      <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
-      <a href="#leistungen" class="btn btn-outline">Leistungen ansehen</a>
+  <!-- ─── Hero ────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <p class="hero-tag">Fachinformatiker · Bayern · offen für Projekte</p>
+      <h1 class="hero-h1">
+        Daniel<br>
+        <em>Bolbocenau</em>
+      </h1>
+      <p class="hero-sub">
+        Software, Webentwicklung & IT-Lösungen —
+        technische Probleme einfach und direkt gelöst.
+      </p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-primary">Projekt anfragen ↗</a>
+        <a href="#leistungen" class="btn-ghost">Leistungen ansehen →</a>
+      </div>
     </div>
-    <div class="hero-scroll">scroll</div>
+
+    <div class="hero-bottom">
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+      <p class="hero-counter">
+        <span>04</span> Leistungsbereiche
+      </p>
+    </div>
   </section>
 
-  <section id="leistungen">
-    <p class="section-label">// 01 — Leistungen</p>
-    <h2 class="section-title">Was ich anbiete</h2>
-    <div class="services-grid">
+  <!-- ─── Leistungen ──────────────────────── -->
+  <section id="leistungen" class="section">
+    <p class="section-eyebrow reveal">01 — Leistungen</p>
+    <h2 class="section-title reveal">Was ich<br><em>anbiete</em></h2>
+
+    <div class="services-grid stagger">
       <div class="service-card">
-        <p class="service-icon">WEB_DEV</p>
+        <p class="service-num">WEB_DEV</p>
         <h3>Webentwicklung</h3>
-        <p>Moderne, schnelle Websites und Webanwendungen – von der einfachen Unternehmensseite bis zur maßgeschneiderten Lösung.</p>
+        <p>Moderne, schnelle Websites und Webanwendungen — von der Unternehmensseite bis zur maßgeschneiderten Lösung.</p>
       </div>
       <div class="service-card">
-        <p class="service-icon">SOFTWARE</p>
+        <p class="service-num">SOFTWARE</p>
         <h3>Softwarelösungen</h3>
-        <p>Individuelle Programme und Tools die deinen Alltag oder dein Unternehmen effizienter machen.</p>
+        <p>Individuelle Programme und Tools, die deinen Alltag oder dein Unternehmen effizienter machen.</p>
       </div>
       <div class="service-card">
-        <p class="service-icon">IT_SUPPORT</p>
+        <p class="service-num">IT_CONSULT</p>
         <h3>IT-Beratung</h3>
-        <p>Technische Unterstützung, Einrichtung von Systemen und ehrliche Beratung ohne unnötigen Fachjargon.</p>
+        <p>Technische Unterstützung und ehrliche Beratung — ohne unnötigen Fachjargon, direkt auf den Punkt.</p>
       </div>
       <div class="service-card">
-        <p class="service-icon">SECURITY</p>
+        <p class="service-num">SECURITY</p>
         <h3>IT-Sicherheit</h3>
-        <p>Grundlegende Sicherheitsprüfungen und Empfehlungen damit deine Daten und Systeme geschützt bleiben.</p>
+        <p>Grundlegende Sicherheitsprüfungen und Empfehlungen, damit deine Daten und Systeme geschützt bleiben.</p>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <p class="section-label">// 02 — Über mich</p>
-    <div class="about-grid">
-      <div class="about-text">
-        <h2 class="section-title">IT ist mehr als<br>nur Code.</h2>
-        <p>Ich bin <strong>Fachinformatiker für Anwendungsentwicklung</strong> aus Bayern und arbeite leidenschaftlich daran, technische Probleme einfach und effizient zu lösen.</p>
-        <p>Ob du eine neue Website brauchst, ein Tool das dir Arbeit abnimmt, oder einfach jemanden der dein IT-Problem versteht und löst – ich helfe dir unkompliziert und direkt.</p>
-        <p>Aktuell noch in der Ausbildung, aber <strong>offen für erste Projekte und Anfragen</strong>.</p>
+  <!-- ─── Über mich ────────────────────────── -->
+  <section id="about" class="section">
+    <p class="section-eyebrow reveal">02 — Über mich</p>
+    <h2 class="section-title reveal">IT ist mehr als<br><em>nur Code.</em></h2>
+
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p>
+          Ich bin <strong>Fachinformatiker für Anwendungsentwicklung</strong> aus Bayern
+          und arbeite leidenschaftlich daran, technische Probleme einfach und effizient zu lösen.
+        </p>
+        <p>
+          Ob du eine neue Website brauchst, ein Tool das dir Arbeit abnimmt, oder einfach
+          jemanden der dein IT-Problem versteht — ich helfe dir unkompliziert und direkt.
+        </p>
+        <p>
+          Aktuell noch in der Ausbildung bei der <strong>Auto Eder Gruppe</strong>,
+          aber bereits offen für erste Projekte und Anfragen.
+        </p>
+        <div class="about-highlight">
+          <p>"Technologie soll das Leben einfacher machen — nicht komplizierter."</p>
+        </div>
       </div>
-      <div class="about-stats">
-        <div class="stat">
-          <div class="stat-number">FIAE</div>
-          <div class="stat-label">Fachinformatiker Anwendungsentwicklung</div>
+
+      <div class="about-facts reveal" data-delay="150">
+        <div class="fact">
+          <span class="fact-label">Ausbildung</span>
+          <span class="fact-value">FIAE</span>
         </div>
-        <div class="stat">
-          <div class="stat-number">Bayern</div>
-          <div class="stat-label">Standort · Remote möglich</div>
+        <div class="fact">
+          <span class="fact-label">Betrieb</span>
+          <span class="fact-value">Auto Eder Gruppe</span>
         </div>
-        <div class="stat">
-          <div class="stat-number">DE / EN</div>
-          <div class="stat-label">Sprachen</div>
+        <div class="fact">
+          <span class="fact-label">Schule</span>
+          <span class="fact-value">BS Traunstein</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Standort</span>
+          <span class="fact-value">Bayern · Remote möglich</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Sprachen</span>
+          <span class="fact-value">DE · EN · RO</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Verfügbarkeit</span>
+          <span class="fact-value">Offen für Projekte</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="stack">
-    <p class="section-label">// 03 — Tech Stack</p>
-    <h2 class="section-title">Womit ich arbeite</h2>
+  <!-- ─── Stack ────────────────────────────── -->
+  <section id="stack" class="section">
+    <p class="section-eyebrow reveal">03 — Tech Stack</p>
+    <h2 class="section-title reveal">Womit ich<br><em>arbeite</em></h2>
 
-    <div class="stack-grid">
+    <div class="stack-groups">
 
-      <div class="stack-group">
-        <p class="stack-group-label">Webentwicklung</p>
+      <div class="stack-group reveal">
+        <p class="stack-group-name">Webentwicklung</p>
         <div class="tags">
           <span class="tag">HTML5</span>
           <span class="tag">CSS</span>
@@ -483,12 +157,12 @@
           <span class="tag">Svelte</span>
           <span class="tag">REST-API</span>
           <span class="tag">API-Entwicklung</span>
-          <span class="tag">Back-End</span>
+          <span class="tag">Back-End-Webentwicklung</span>
         </div>
       </div>
 
-      <div class="stack-group">
-        <p class="stack-group-label">Datenbanken & Backend</p>
+      <div class="stack-group reveal" data-delay="100">
+        <p class="stack-group-name">Datenbanken & Backend</p>
         <div class="tags">
           <span class="tag">SQL</span>
           <span class="tag">MySQL</span>
@@ -496,51 +170,72 @@
         </div>
       </div>
 
-      <div class="stack-group">
-        <p class="stack-group-label">Tools & Zusammenarbeit</p>
+      <div class="stack-group reveal" data-delay="200">
+        <p class="stack-group-name">Tools & Zusammenarbeit</p>
         <div class="tags">
-          <span class="tag">Git / GitLab</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitLab</span>
           <span class="tag">JIRA</span>
           <span class="tag">UML</span>
         </div>
       </div>
 
-      <div class="stack-group">
-        <p class="stack-group-label">Netzwerk & Hardware</p>
+      <div class="stack-group reveal" data-delay="300">
+        <p class="stack-group-name">Netzwerk & Hardware</p>
         <div class="tags">
-          <span class="tag">IPv4 / IPv6</span>
+          <span class="tag">IPv4</span>
+          <span class="tag">IPv6</span>
           <span class="tag">Networking</span>
           <span class="tag">Hardware</span>
           <span class="tag">Raspberry Pi</span>
         </div>
       </div>
 
-      <div class="stack-group">
-        <p class="stack-group-label">Grundlagen</p>
-        <div class="tags">
-          <span class="tag">Informatik</span>
-          <span class="tag">Programmieren</span>
-        </div>
+    </div>
+  </section>
+
+  <!-- ─── Kontakt ──────────────────────────── -->
+  <section id="kontakt" class="section">
+    <p class="section-eyebrow reveal">04 — Kontakt</p>
+    <h2 class="section-title reveal">Lass uns<br><em>reden.</em></h2>
+
+    <div class="contact-layout">
+      <div class="reveal">
+        <p style="color: var(--muted); font-size: 15px; line-height: 1.8; max-width: 380px;">
+          Hast du ein Projekt, eine Idee oder eine Frage?
+          Schreib mir einfach — ich antworte schnell.
+        </p>
+        <a href="mailto:danielbolbocenau@gmail.com" class="contact-email-link">
+          danielbolbocenau@gmail.com
+        </a>
+        <a href="mailto:danielbolbocenau@gmail.com" class="btn-primary" style="display: inline-flex;">
+          E-Mail schreiben ↗
+        </a>
       </div>
 
+      <div class="contact-links reveal" data-delay="150">
+        <a href="https://github.com/danielbolbocenau" target="_blank" class="contact-link">
+          <span class="contact-link-name">GitHub</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/danielbolbocenau" target="_blank" class="contact-link">
+          <span class="contact-link-name">LinkedIn</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="mailto:danielbolbocenau@gmail.com" class="contact-link">
+          <span class="contact-link-name">E-Mail</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <section id="kontakt">
-    <p class="section-label">// 04 — Kontakt</p>
-    <h2 class="section-title">Lass uns reden.</h2>
-    <p style="color: var(--text-muted); font-size: 15px; max-width: 400px; margin: 0 auto;">Hast du ein Projekt, eine Idee oder eine Frage? Schreib mir einfach.</p>
-    <a href="mailto:danielbolbocenau@gmail.com" class="contact-email">danielbolbocenau@gmail.com</a>
-    <div class="contact-links">
-      <a href="https://github.com/danielbolbocenau" target="_blank">GitHub ↗</a>
-      <a href="https://linkedin.com/in/danielbolbocenau" target="_blank">LinkedIn ↗</a>
-    </div>
-  </section>
-
+  <!-- ─── Footer ──────────────────────────── -->
   <footer>
-    <p>© 2025 Daniel Bolbocenau</p>
+    <p>© <span id="year"></span> Daniel Bolbocenau</p>
     <p>Bayern, Deutschland</p>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
