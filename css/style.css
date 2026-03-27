@@ -530,33 +530,6 @@ nav.solid {
   transform: translateY(-4px) scale(1.03);
 }
 
-/* Kontakt Formular */
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 7rem;
-  align-items: start;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 15px;
-  transition: all .3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px var(--accent-pale);
-}
-
 /* Footer */
 footer {
   padding: 3rem var(--pad) 2rem;

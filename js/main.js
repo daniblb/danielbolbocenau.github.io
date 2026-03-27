@@ -84,35 +84,6 @@ if (typingEl) {
   type();
 }
 
-// Kontakt Formular mit einzigartiger Auftragsnummer
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    const uniqueNumber = 'Auftrag - Nr. ' + Math.floor(10000000 + Math.random() * 90000000);
-
-    const subject = encodeURIComponent(uniqueNumber);
-
-    const body = encodeURIComponent(
-      `Name: ${name}\n` +
-      `E-Mail: ${email}\n\n` +
-      `Nachricht:\n${message}\n\n` +
-      `---\nDiese Anfrage hat die Nummer: ${uniqueNumber}`
-    );
-
-    window.location.href = `mailto:danielbolbocenau@gmail.com?subject=${subject}&body=${body}`;
-
-    alert('Vielen Dank! Deine Anfrage wurde als ' + uniqueNumber + ' gespeichert.\nDein E-Mail-Programm wird geöffnet.');
-    contactForm.reset();
-  });
-}
-
 // Footer year
 const yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
