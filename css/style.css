@@ -595,6 +595,40 @@ nav.solid {
 .contact-big:hover { color: var(--accent-hover); }
 .contact-big:hover::after { width: 100%; }
 
+.clink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: padding-left .4s var(--ease);
+}
+
+.clink:first-child { border-top: 1px solid var(--border-subtle); }
+.clink:hover { padding-left: .8rem; }
+
+.clink-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: .07em;
+  transition: color .3s;
+}
+
+.clink:hover .clink-name { color: var(--text-primary); }
+
+.clink-arr { 
+  color: var(--text-muted); 
+  font-size: 15px; 
+  transition: all .3s; 
+}
+
+.clink:hover .clink-arr { 
+  color: var(--accent-primary); 
+  transform: translate(4px, -4px); 
+}
+
 /* Footer */
 footer {
   padding: 3rem var(--pad) 2rem;
