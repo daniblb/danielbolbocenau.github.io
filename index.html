@@ -35,9 +35,7 @@
     </div>
 
     <button id="hamburger" class="hamburger" aria-label="Menü öffnen">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
@@ -78,11 +76,8 @@
           <h3>Telefonbuch</h3>
           <p>Modernisierung eines Telefonbuchs mit neuem, benutzerfreundlichem Interface und optimiertem Backend.</p>
           <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">PHP</span>
-            <span class="tag">SQL</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
           </div>
         </div>
       </div>
@@ -90,11 +85,9 @@
       <div class="project-card" data-delay="100">
         <div class="project-info">
           <h3>Space Invaders</h3>
-          <p>Vollständige Implementierung des klassischen Spiels mit Java und Swing. Fokus auf Objektorientierung und GUI-Entwicklung.</p>
+          <p>Vollständige Implementierung des klassischen Spiels mit Java und Swing.</p>
           <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Java Swing</span>
-            <span class="tag">OOP</span>
+            <span class="tag">Java</span><span class="tag">Java Swing</span><span class="tag">OOP</span>
           </div>
         </div>
       </div>
@@ -104,11 +97,8 @@
           <h3>Urlaubsplaner</h3>
           <p>Web-Anwendung zur Verwaltung von Urlaubsanträgen mit modernem, responsivem Design.</p>
           <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">PHP</span>
-            <span class="tag">SQL</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
           </div>
         </div>
       </div>
@@ -124,17 +114,17 @@
       <div class="service-card">
         <p class="service-num">WEB_DEV</p>
         <h3>Webentwicklung</h3>
-        <p>Moderne, performante Websites und Webanwendungen – von der einfachen Präsenz bis zur komplexen Anwendung.</p>
+        <p>Moderne, performante Websites und Webanwendungen.</p>
       </div>
       <div class="service-card">
         <p class="service-num">SOFTWARE</p>
         <h3>Softwarelösungen</h3>
-        <p>Individuelle Programme und Tools, die Abläufe spürbar effizienter machen.</p>
+        <p>Individuelle Programme und Tools für mehr Effizienz.</p>
       </div>
       <div class="service-card">
         <p class="service-num">IT_CONSULT</p>
         <h3>IT-Beratung</h3>
-        <p>Praxisnahe und verständliche Beratung – ohne unnötigen Fachjargon.</p>
+        <p>Praxisnahe Beratung ohne Fachchinesisch.</p>
       </div>
     </div>
   </section>
@@ -202,32 +192,28 @@
 
     <div class="contact-wrap">
       <div class="reveal">
-        <p style="color:var(--text-secondary); font-size:15px; line-height:1.85; max-width:420px; margin-bottom:2.5rem;">
-          Hast du ein Projekt, eine Idee oder eine Frage?<br>
-          Schreib mir einfach eine E-Mail – ich antworte schnell.
+        <p style="color:var(--text-secondary); font-size:15px; line-height:1.85; max-width:420px; margin-bottom:2rem;">
+          Hast du ein Projekt oder eine Anfrage? Fülle das Formular aus – ich melde mich schnell bei dir.
         </p>
 
-        <a href="mailto:danielbolbocenau@gmail.com" class="contact-big">
-          danielbolbocenau@gmail.com
-        </a>
-
-        <a href="mailto:danielbolbocenau@gmail.com" class="btn-primary" style="margin-top: 2rem; display: inline-flex;">
-          E-Mail schreiben ↗
-        </a>
+        <form id="contact-form" class="contact-form">
+          <input type="text" id="name" name="name" placeholder="Dein Name" required>
+          <input type="email" id="email" name="email" placeholder="Deine E-Mail-Adresse" required>
+          <textarea id="message" name="message" placeholder="Deine Nachricht oder Projektbeschreibung..." rows="6" required></textarea>
+          
+          <button type="submit" class="btn-primary">Anfrage senden ↗</button>
+        </form>
       </div>
 
       <div class="contact-links-col reveal" data-delay="150">
         <a href="https://github.com/danielbolbocenau" target="_blank" class="clink">
-          <span class="clink-name">GitHub</span>
-          <span class="clink-arr">↗</span>
+          <span class="clink-name">GitHub</span><span class="clink-arr">↗</span>
         </a>
         <a href="https://linkedin.com/in/danielbolbocenau" target="_blank" class="clink">
-          <span class="clink-name">LinkedIn</span>
-          <span class="clink-arr">↗</span>
+          <span class="clink-name">LinkedIn</span><span class="clink-arr">↗</span>
         </a>
         <a href="mailto:danielbolbocenau@gmail.com" class="clink">
-          <span class="clink-name">E-Mail direkt</span>
-          <span class="clink-arr">↗</span>
+          <span class="clink-name">E-Mail direkt</span><span class="clink-arr">↗</span>
         </a>
       </div>
     </div>
