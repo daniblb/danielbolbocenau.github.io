@@ -57,43 +57,161 @@
     </div>
   </section>
 
-  <!-- Projekte, Leistungen, Über mich, Stack ... (bleiben gleich) -->
+  <!-- Projekte -->
+  <section id="projekte" class="section">
+    <p class="eyebrow reveal">01 — Projekte</p>
+    <h2 class="section-title reveal">Ausgewählte<br><em>Arbeiten</em></h2>
 
-<!-- Kontakt -->
-<section id="kontakt" class="section">
-  <p class="eyebrow reveal">05 — Kontakt</p>
-  <h2 class="section-title reveal">Lass uns<br><em>reden.</em></h2>
+    <div class="projects-grid stagger">
+      <div class="project-card">
+        <div class="project-info">
+          <h3>Telefonbuch</h3>
+          <p>Modernisierung eines Telefonbuchs mit neuem, benutzerfreundlichem Interface und optimiertem Backend.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
 
-  <div class="contact-wrap">
-    <div class="reveal">
-      <p style="color:var(--text-secondary); font-size:15.5px; line-height:1.85; max-width:460px; margin-bottom:2.5rem;">
-        Hast du ein Projekt, eine Idee oder eine Frage?<br>
-        Schreib mir einfach eine E-Mail – ich antworte schnell.
-      </p>
+      <div class="project-card" data-delay="100">
+        <div class="project-info">
+          <h3>Space Invaders</h3>
+          <p>Vollständige Implementierung des klassischen Spiels mit Java und Swing.</p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Java Swing</span><span class="tag">OOP</span>
+          </div>
+        </div>
+      </div>
 
-      <a href="mailto:danielbolbocenau@gmail.com" class="contact-big">
-        danielbolbocenau@gmail.com
-      </a>
+      <div class="project-card" data-delay="200">
+        <div class="project-info">
+          <h3>Urlaubsplaner</h3>
+          <p>Web-Anwendung zur Verwaltung von Urlaubsanträgen mit modernem, responsivem Design.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div style="margin-top: 2.5rem;">
-        <a href="mailto:danielbolbocenau@gmail.com" class="btn-primary">
-          E-Mail schreiben ↗
+  <!-- Leistungen -->
+  <section id="leistungen" class="section">
+    <p class="eyebrow reveal">02 — Leistungen</p>
+    <h2 class="section-title reveal">Was ich<br><em>anbiete</em></h2>
+
+    <div class="services-grid stagger">
+      <div class="service-card">
+        <p class="service-num">WEB_DEV</p>
+        <h3>Webentwicklung</h3>
+        <p>Moderne, performante Websites und Webanwendungen.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">SOFTWARE</p>
+        <h3>Softwarelösungen</h3>
+        <p>Individuelle Programme und Tools für mehr Effizienz.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">IT_CONSULT</p>
+        <h3>IT-Beratung</h3>
+        <p>Praxisnahe Beratung ohne Fachchinesisch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über mich -->
+  <section id="about" class="section">
+    <p class="eyebrow reveal">03 — Über mich</p>
+    <h2 class="section-title reveal">Probleme lösen.<br><em>mit Code.</em></h2>
+
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p>Ich bin <strong>Fachinformatiker für Anwendungsentwicklung</strong> und entwickle moderne Webanwendungen sowie maßgeschneiderte Softwarelösungen.</p>
+        <p>Mein Ansatz ist klar und pragmatisch: technische Herausforderungen verständlich und effizient lösen.</p>
+        <p>Offen für spannende Projekte und neue Zusammenarbeiten.</p>
+        
+        <div class="about-quote">
+          "Guter Code macht das Leben einfacher – nicht komplizierter."
+        </div>
+      </div>
+
+      <div class="facts reveal" data-delay="150">
+        <div class="fact"><span class="fact-label">Rolle</span><span class="fact-value">Fachinformatiker für Anwendungsentwicklung</span></div>
+        <div class="fact"><span class="fact-label">Standort</span><span class="fact-value">Deutschland · Remote möglich</span></div>
+        <div class="fact"><span class="fact-label">Sprachen</span><span class="fact-value">Deutsch · Englisch · Italienisch</span></div>
+        <div class="fact"><span class="fact-label">Verfügbarkeit</span><span class="fact-value">Offen für Projekte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section id="stack" class="section">
+    <p class="eyebrow reveal">04 — Tech Stack</p>
+    <h2 class="section-title reveal">Womit ich<br><em>arbeite</em></h2>
+
+    <div class="stack-groups">
+      <div class="reveal">
+        <p class="group-name">Webentwicklung</p>
+        <div class="tags">
+          <span class="tag">HTML5</span><span class="tag">CSS</span>
+          <span class="tag">JavaScript</span><span class="tag">Svelte</span>
+          <span class="tag">REST-API</span>
+        </div>
+      </div>
+      <div class="reveal" data-delay="80">
+        <p class="group-name">Backend & Datenbanken</p>
+        <div class="tags">
+          <span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">MySQL</span>
+          <span class="tag">.NET-Framework</span>
+        </div>
+      </div>
+      <div class="reveal" data-delay="160">
+        <p class="group-name">Tools & Sonstiges</p>
+        <div class="tags">
+          <span class="tag">Git</span><span class="tag">Java</span>
+          <span class="tag">Bootstrap</span><span class="tag">UML</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="section">
+    <p class="eyebrow reveal">05 — Kontakt</p>
+    <h2 class="section-title reveal">Lass uns<br><em>reden.</em></h2>
+
+    <div class="contact-wrap">
+      <div class="reveal">
+        <p style="color:var(--text-secondary); font-size:15.5px; line-height:1.85; max-width:460px; margin-bottom:2.5rem;">
+          Hast du ein Projekt, eine Idee oder eine Frage?<br>
+          Schreib mir einfach eine E-Mail – ich antworte schnell.
+        </p>
+
+        <a href="mailto:danielbolbocenau@gmail.com" class="contact-big">
+          danielbolbocenau@gmail.com
+        </a>
+
+        <div style="margin-top: 2.5rem;">
+          <a href="mailto:danielbolbocenau@gmail.com" class="btn-primary">
+            E-Mail schreiben ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-links-col reveal" data-delay="150">
+        <a href="https://github.com/danielbolbocenau" target="_blank" class="clink">
+          <span class="clink-name">GitHub</span>
+          <span class="clink-arr">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/danielbolbocenau" target="_blank" class="clink">
+          <span class="clink-name">LinkedIn</span>
+          <span class="clink-arr">↗</span>
         </a>
       </div>
     </div>
-
-    <div class="contact-links-col reveal" data-delay="150">
-      <a href="https://github.com/danielbolbocenau" target="_blank" class="clink">
-        <span class="clink-name">GitHub</span>
-        <span class="clink-arr">↗</span>
-      </a>
-      <a href="https://linkedin.com/in/danielbolbocenau" target="_blank" class="clink">
-        <span class="clink-name">LinkedIn</span>
-        <span class="clink-arr">↗</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer>
