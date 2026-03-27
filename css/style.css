@@ -579,3 +579,58 @@ footer {
   #cursor, #cursor-trail { display: none; }
   body { cursor: auto; }
 }
+/* Verbesserter Kontakt-Bereich */
+.contact-big {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 500;
+  color: var(--accent-primary);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: color .3s ease;
+}
+
+.contact-big:hover {
+  color: var(--accent-hover);
+}
+
+.contact-big::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  transition: width .4s var(--ease);
+}
+
+.contact-big:hover::after {
+  width: 100%;
+}
+
+/* Button etwas eleganter */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  background: var(--accent-primary);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 12.8px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  padding: 1.05rem 2.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all .4s var(--ease);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
