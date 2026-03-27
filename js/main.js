@@ -90,7 +90,7 @@ window.addEventListener('scroll', () => {
   });
   navLinks.forEach(a => {
     a.style.color = a.getAttribute('href') === '#' + current
-      ? 'var(--cream)' : '';
+      ? 'var(--accent-primary)' : '';
   });
 }, { passive: true });
 
