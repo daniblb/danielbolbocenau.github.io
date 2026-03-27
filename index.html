@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daniel Bolbocenau – Webentwicklung, Softwarelösungen & IT-Beratung." />
+  <meta name="description" content="Daniel Bolbocenau – Fachinformatiker für Anwendungsentwicklung. Moderne Webentwicklung, individuelle Softwarelösungen und IT-Beratung." />
+  <meta property="og:title" content="Daniel Bolbocenau — Software & Webentwicklung" />
+  <meta property="og:description" content="Moderne Webentwicklung, individuelle Softwarelösungen und klare IT-Beratung." />
+  <meta property="og:type" content="website" />
   <title>Daniel Bolbocenau — Software & Webentwicklung</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
 
   <div id="cursor"></div>
   <div id="cursor-trail"></div>
@@ -15,12 +23,21 @@
   <!-- Nav -->
   <nav>
     <a href="#hero" class="nav-logo">DB.portfolio</a>
-    <ul class="nav-links">
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#about">Über mich</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#kontakt" class="nav-cta">Kontakt ↗</a></li>
-    </ul>
+    
+    <div class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#projekte">Projekte</a></li>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#kontakt" class="nav-cta">Kontakt ↗</a></li>
+      </ul>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- Hero -->
@@ -45,18 +62,53 @@
 
     <div class="hero-actions">
       <a href="#kontakt" class="btn-primary">Projekt starten ↗</a>
-      <a href="#leistungen" class="btn-ghost">Leistungen ansehen →</a>
+      <a href="#projekte" class="btn-ghost">Projekte ansehen →</a>
     </div>
+  </section>
 
-    <div class="hero-scroll">
-      <div class="scroll-bar"></div>
-      <span>scroll</span>
+  <!-- Projekte -->
+  <section id="projekte" class="section">
+    <p class="eyebrow reveal">01 — Projekte</p>
+    <h2 class="section-title reveal">Ausgewählte<br><em>Arbeiten</em></h2>
+
+    <div class="projects-grid stagger">
+      <div class="project-card reveal">
+        <div class="project-info">
+          <h3>Telefonbuch</h3>
+          <p>Modernisierung eines Telefonbuchs mit neuem User Interface und optimiertem Backend.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-delay="100">
+        <div class="project-info">
+          <h3>Space Invaders</h3>
+          <p>Klassisches Space-Invaders-Spiel vollständig in Java mit Swing implementiert.</p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Java Swing</span><span class="tag">OOP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-delay="200">
+        <div class="project-info">
+          <h3>Urlaubsplaner</h3>
+          <p>Web-Anwendung zur Verwaltung von Urlaubsanträgen mit responsivem Design.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Leistungen -->
   <section id="leistungen" class="section">
-    <p class="eyebrow reveal">01 — Leistungen</p>
+    <p class="eyebrow reveal">02 — Leistungen</p>
     <h2 class="section-title reveal">Was ich<br><em>anbiete</em></h2>
 
     <div class="services-grid stagger">
@@ -75,17 +127,12 @@
         <h3>IT-Beratung</h3>
         <p>Ehrliche, praxisnahe Beratung ohne Fachchinesisch – direkt auf den Punkt.</p>
       </div>
-      <div class="service-card">
-        <p class="service-num">SECURITY</p>
-        <h3>IT-Sicherheit</h3>
-        <p>Grundlegende Sicherheitsanalysen und konkrete Empfehlungen zum Schutz deiner Systeme und Daten.</p>
-      </div>
     </div>
   </section>
 
   <!-- Über mich -->
   <section id="about" class="section">
-    <p class="eyebrow reveal">02 — Über mich</p>
+    <p class="eyebrow reveal">03 — Über mich</p>
     <h2 class="section-title reveal">Probleme lösen.<br><em>mit Code.</em></h2>
 
     <div class="about-layout">
@@ -110,7 +157,7 @@
 
   <!-- Stack -->
   <section id="stack" class="section">
-    <p class="eyebrow reveal">03 — Tech Stack</p>
+    <p class="eyebrow reveal">04 — Tech Stack</p>
     <h2 class="section-title reveal">Womit ich<br><em>arbeite</em></h2>
 
     <div class="stack-groups">
@@ -120,29 +167,20 @@
           <span class="tag">HTML5</span><span class="tag">CSS</span>
           <span class="tag">JavaScript</span><span class="tag">Svelte</span>
           <span class="tag">REST-API</span><span class="tag">API-Entwicklung</span>
-          <span class="tag">Back-End</span>
         </div>
       </div>
       <div class="reveal" data-delay="80">
-        <p class="group-name">Datenbanken & Backend</p>
+        <p class="group-name">Backend & Datenbanken</p>
         <div class="tags">
-          <span class="tag">SQL</span><span class="tag">MySQL</span>
+          <span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">MySQL</span>
           <span class="tag">.NET-Framework</span>
         </div>
       </div>
       <div class="reveal" data-delay="160">
-        <p class="group-name">Tools & Zusammenarbeit</p>
+        <p class="group-name">Tools & Sonstiges</p>
         <div class="tags">
           <span class="tag">Git</span><span class="tag">GitLab</span>
-          <span class="tag">JIRA</span><span class="tag">UML</span>
-        </div>
-      </div>
-      <div class="reveal" data-delay="240">
-        <p class="group-name">Netzwerk & Hardware</p>
-        <div class="tags">
-          <span class="tag">IPv4</span><span class="tag">IPv6</span>
-          <span class="tag">Networking</span><span class="tag">Hardware</span>
-          <span class="tag">Raspberry Pi</span>
+          <span class="tag">Java</span><span class="tag">Bootstrap</span>
         </div>
       </div>
     </div>
@@ -150,34 +188,35 @@
 
   <!-- Kontakt -->
   <section id="kontakt" class="section">
-    <p class="eyebrow reveal">04 — Kontakt</p>
+    <p class="eyebrow reveal">05 — Kontakt</p>
     <h2 class="section-title reveal">Lass uns<br><em>reden.</em></h2>
 
     <div class="contact-wrap">
       <div class="reveal">
-        <p style="color:var(--text-secondary);font-size:15px;line-height:1.85;max-width:380px;">
-          Hast du ein Projekt, eine Idee oder eine Frage?<br>
-          Schreib mir – ich antworte schnell.
+        <p style="color:var(--text-secondary);font-size:15px;line-height:1.85;max-width:420px;margin-bottom:2rem;">
+          Hast du ein Projekt oder eine Frage? Schreib mir – ich antworte schnell.
         </p>
-        <a href="mailto:danielbolbocenau@gmail.com" class="contact-big">
-          danielbolbocenau@gmail.com
-        </a><br>
-        <a href="mailto:danielbolbocenau@gmail.com" class="btn-primary" style="margin-top:1rem;display:inline-flex;">
-          E-Mail schreiben ↗
-        </a>
+
+        <!-- Kontakt Formular -->
+        <form action="https://formspree.io/f/DEINE_FORM_ID_HIER" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Dein Name" required>
+          <input type="email" name="email" placeholder="Deine E-Mail" required>
+          <textarea name="message" placeholder="Deine Nachricht..." rows="6" required></textarea>
+          <button type="submit" class="btn-primary">Nachricht senden ↗</button>
+        </form>
       </div>
 
       <div class="contact-links-col reveal" data-delay="150">
-        <a href="https://github.com/daniblb" target="_blank" class="clink">
+        <a href="https://github.com/danielbolbocenau" target="_blank" class="clink">
           <span class="clink-name">GitHub</span>
           <span class="clink-arr">↗</span>
         </a>
-        <a href="https://www.linkedin.com/in/daniel-bolbocenau" target="_blank" class="clink">
+        <a href="https://linkedin.com/in/danielbolbocenau" target="_blank" class="clink">
           <span class="clink-name">LinkedIn</span>
           <span class="clink-arr">↗</span>
         </a>
         <a href="mailto:danielbolbocenau@gmail.com" class="clink">
-          <span class="clink-name">E-Mail</span>
+          <span class="clink-name">E-Mail direkt</span>
           <span class="clink-arr">↗</span>
         </a>
       </div>
@@ -187,6 +226,11 @@
   <!-- Footer -->
   <footer>
     <p>© <span id="year"></span> Daniel Bolbocenau</p>
+    <div class="footer-links">
+      <a href="https://github.com/danielbolbocenau" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/danielbolbocenau" target="_blank">LinkedIn</a>
+      <a href="#">Impressum</a>
+    </div>
     <p>Deutschland</p>
   </footer>
 
