@@ -98,7 +98,7 @@ function openModal(project) {
   if (project === 'space') {
     title.textContent = 'Space Invaders';
     desc.textContent = 'Java Swing Spiel mit Game Loop, OOP-System, Alien-KI und dynamischer Schwierigkeit.';
-    github.href = 'https://github.com/daniblb/space-invaders'; // ANPASSEN
+    github.href = 'https://github.com/daniblb/SpaceInvaders';
 
     status.textContent = 'Status: Fertiggestellt';
     status.className = 'status online';
@@ -107,7 +107,7 @@ function openModal(project) {
   if (project === 'pi') {
     title.textContent = 'Raspberry Pi Minecraft Server';
     desc.textContent = 'Headless Server mit systemd, SSH und Performance-Tuning auf limitierter Hardware.';
-    github.href = 'https://github.com/daniblb/raspberry-pi-server'; // ANPASSEN
+    github.href = 'https://github.com/daniblb/raspberry-pi-minecraft-server';
 
     status.textContent = 'Status: Läuft lokal (24/7)';
     status.className = 'status online';
