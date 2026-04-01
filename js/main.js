@@ -89,6 +89,9 @@ const yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
 
 function openModal(project) {
+  document.body.classList.remove('hovering'); // FIX
+  document.body.classList.add('modal-open');  // optional Lock
+
   const modal = document.getElementById('modal');
   const title = document.getElementById('modal-title');
   const desc = document.getElementById('modal-desc');
@@ -97,19 +100,34 @@ function openModal(project) {
 
   if (project === 'space') {
     title.textContent = 'Space Invaders';
-    desc.textContent = 'Java Swing Spiel mit Game Loop, OOP-System, Alien-KI und dynamischer Schwierigkeit.';
-    github.href = 'https://github.com/daniblb/SpaceInvaders';
+    desc.textContent = `
+    Java Swing Game mit eigenem Game Loop, OOP-Architektur und dynamischer Difficulty.
+    
+    Features:
+    - Alien KI mit skalierender Schwierigkeit
+    - Ammo-System & HUD
+    - Collision Detection & Physics
+    `;
+    github.href = 'https://github.com/daniblb/space-invaders';
 
-    status.textContent = 'Status: Fertiggestellt';
+    status.textContent = 'Status: Completed';
     status.className = 'status online';
   }
 
   if (project === 'pi') {
     title.textContent = 'Raspberry Pi Minecraft Server';
-    desc.textContent = 'Headless Server mit systemd, SSH und Performance-Tuning auf limitierter Hardware.';
-    github.href = 'https://github.com/daniblb/raspberry-pi-minecraft-server';
+    desc.textContent = `
+    Headless Minecraft Server auf Raspberry Pi 4 mit Linux & systemd.
 
-    status.textContent = 'Status: Läuft lokal (24/7)';
+    Features:
+    - SSH-only Verwaltung
+    - systemd Autostart Service
+    - Performance Tuning für 4GB RAM
+    - Port Forwarding & Netzwerk Setup
+    `;
+    github.href = 'https://github.com/daniblb/raspberry-pi-server';
+
+    status.textContent = 'Status: Running locally';
     status.className = 'status online';
   }
 
@@ -118,4 +136,5 @@ function openModal(project) {
 
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
+  document.body.classList.remove('modal-open');
 }

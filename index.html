@@ -237,8 +237,11 @@
   <script src="js/main.js"></script>
 </body>
 
-<div id="modal" class="modal" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
     <h3 id="modal-title"></h3>
     <p id="modal-desc"></p>
 
@@ -246,7 +249,9 @@
 
     <div class="modal-links">
       <a id="modal-github" href="#" target="_blank" class="btn-primary">GitHub ↗</a>
+      <button onclick="closeModal()" class="btn-ghost">Close</button>
     </div>
+
   </div>
 </div>
 
