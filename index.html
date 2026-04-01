@@ -63,38 +63,48 @@
     <h2 class="section-title reveal">Ausgewählte<br><em>Arbeiten</em></h2>
 
     <div class="projects-grid stagger">
-      <div class="project-card">
-        <div class="project-info">
-          <h3>Telefonbuch</h3>
-          <p>Modernisierung eines Telefonbuchs mit neuem, benutzerfreundlichem Interface und optimiertem Backend.</p>
-          <div class="tags">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-            <span class="tag">PHP</span><span class="tag">SQL</span>
-          </div>
-        </div>
+
+  <!-- Space Invaders -->
+  <div class="project-card" onclick="openModal('space')">
+    <div class="project-info">
+      <h3>Space Invaders</h3>
+      <p>
+        Java Swing Game mit OOP-Architektur, Game Loop und dynamischer Difficulty.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Java</span>
+        <span class="tag">Swing</span>
+        <span class="tag">OOP</span>
       </div>
 
-      <div class="project-card" data-delay="100">
-        <div class="project-info">
-          <h3>Space Invaders</h3>
-          <p>Vollständige Implementierung des klassischen Spiels mit Java und Swing.</p>
-          <div class="tags">
-            <span class="tag">Java</span><span class="tag">Java Swing</span><span class="tag">OOP</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-delay="200">
-        <div class="project-info">
-          <h3>Urlaubsplaner</h3>
-          <p>Web-Anwendung zur Verwaltung von Urlaubsanträgen mit modernem, responsivem Design.</p>
-          <div class="tags">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
-            <span class="tag">PHP</span><span class="tag">SQL</span>
-          </div>
-        </div>
+      <div class="project-hover">
+        <span>Details ansehen →</span>
       </div>
     </div>
+  </div>
+
+  <!-- Raspberry Pi -->
+  <div class="project-card" data-delay="100" onclick="openModal('pi')">
+    <div class="project-info">
+      <h3>Raspberry Pi Server</h3>
+      <p>
+        Headless Minecraft Server mit Linux, systemd und SSH.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Linux</span>
+        <span class="tag">systemd</span>
+        <span class="tag">Networking</span>
+      </div>
+
+      <div class="project-hover">
+        <span>Details ansehen →</span>
+      </div>
+    </div>
+  </div>
+
+</div>
   </section>
 
   <!-- Leistungen -->
@@ -226,4 +236,18 @@
 
   <script src="js/main.js"></script>
 </body>
+
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+
+    <div id="modal-status" class="status"></div>
+
+    <div class="modal-links">
+      <a id="modal-github" href="#" target="_blank" class="btn-primary">GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
 </html>

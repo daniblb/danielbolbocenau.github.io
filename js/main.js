@@ -87,3 +87,35 @@ if (typingEl) {
 // Footer year
 const yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
+
+function openModal(project) {
+  const modal = document.getElementById('modal');
+  const title = document.getElementById('modal-title');
+  const desc = document.getElementById('modal-desc');
+  const github = document.getElementById('modal-github');
+  const status = document.getElementById('modal-status');
+
+  if (project === 'space') {
+    title.textContent = 'Space Invaders';
+    desc.textContent = 'Java Swing Spiel mit Game Loop, OOP-System, Alien-KI und dynamischer Schwierigkeit.';
+    github.href = 'https://github.com/daniblb/space-invaders'; // ANPASSEN
+
+    status.textContent = 'Status: Fertiggestellt';
+    status.className = 'status online';
+  }
+
+  if (project === 'pi') {
+    title.textContent = 'Raspberry Pi Minecraft Server';
+    desc.textContent = 'Headless Server mit systemd, SSH und Performance-Tuning auf limitierter Hardware.';
+    github.href = 'https://github.com/daniblb/raspberry-pi-server'; // ANPASSEN
+
+    status.textContent = 'Status: Läuft lokal (24/7)';
+    status.className = 'status online';
+  }
+
+  modal.classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}

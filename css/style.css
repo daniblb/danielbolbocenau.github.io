@@ -613,3 +613,66 @@ footer {
   #cursor, #cursor-trail { display: none; }
   body { cursor: auto; }
 }
+/* Hover Overlay */
+.project-hover {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-primary);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .3s var(--ease);
+}
+
+.project-card:hover .project-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+  animation: up .4s var(--ease);
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+}
+
+.modal-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.status {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  margin-top: 1rem;
+}
+
+.status.online { color: green; }
+.status.offline { color: red; }
