@@ -89,8 +89,8 @@ const yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
 
 function openModal(project) {
-  document.body.classList.remove('hovering'); // FIX
-  document.body.classList.add('modal-open');  // optional Lock
+  document.body.classList.remove('hovering'); 
+  document.body.classList.add('modal-open'); 
 
   const modal = document.getElementById('modal');
   const title = document.getElementById('modal-title');
